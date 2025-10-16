@@ -1,6 +1,9 @@
-import streamlit as st
+import os
 import openai
+import streamlit as st
+
 openai.api_key = os.environ["OPENAI_API_KEY"]
+
 
 # ====== Configure your OpenAI API key ======
 # For Streamlit Cloud, we will store it as a secret
@@ -30,4 +33,5 @@ if st.button("Translate"):
             st.text_area("German Translation:", value=german_text, height=200)
         except Exception as e:
             st.error(f"Translation failed: {e}")
+
 
